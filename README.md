@@ -24,4 +24,4 @@ It's maybe a trade of to make.
 By this filter the name of the url parameter can be changed.
 
 #Issues
-- The provided password can just be upper-, lowercase alphanumeric.
+- The provided password can just be upper-, lowercase alphanumeric, Dashes and Minus.
