@@ -30,7 +30,7 @@ function cmc_afppwbu_redirect() {
 			$cmc_access_token = sanitize_title( $_GET[ $cmc_password_url_parameter ] );
 
 			// Prepare the redirect target
-			$cmc_redirect_to_login_location = wp_sanitize_redirect( 'wp-login.php?action=postpass&access_token=' . $cmc_access_token . '&ref=' . $_SERVER['REDIRECT_URL'] );
+			$cmc_redirect_to_login_location = wp_sanitize_redirect( '/wp-login.php?action=postpass&access_token=' . $cmc_access_token . '&ref=' . $_SERVER['REDIRECT_URL'] );
 
 			// Redirect to login to try to authorise the user by setting a cookie
 			wp_redirect( $cmc_redirect_to_login_location );
