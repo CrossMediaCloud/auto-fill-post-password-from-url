@@ -27,7 +27,7 @@ function cmc_afppwbu_redirect() {
 		if ( isset( $_GET[ $cmc_password_url_parameter ] ) ) {
 
 			// Make the token more safe
-			$cmc_access_token = sanitize_title( $_GET[ $cmc_password_url_parameter ] );
+			$cmc_access_token = preg_replace( '/[^-a-zA-Z0-9_]/', '', $_GET[ $cmc_password_url_parameter ] );
 
 			// Prepare the redirect target
 			$cmc_redirect_to_login_location = wp_sanitize_redirect( '/wp-login.php?action=postpass&access_token=' . $cmc_access_token . '&ref=' . $_SERVER['REDIRECT_URL'] );
