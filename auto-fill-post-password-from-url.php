@@ -2,7 +2,7 @@
 /*
 Plugin Name: Auto fill post password from url
 Plugin URI:  https://github.com/CrossMediaCloud/auto-fill-post-password-from-url
-Description: Fills out the post password for the user if provided in url
+Description: Fills out the post password for the user if provided in the url
 Version:     0.1
 Author:      Cross Media Cloud
 Author URI:  http://www.Cross-Media-Cloud.de
