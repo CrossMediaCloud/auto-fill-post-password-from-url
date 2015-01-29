@@ -3,7 +3,7 @@ Fills out the post password for the user if provided in the url
 
 #Use case
 If a post in your site is semi-public and proteced by a password the visiter is prompted to enter the password.
-In some cases of embedding or communication with less internet versiert persons the extra step of entering a password can be a un-needed barrier.
+In some cases of embedding or communication with less web savvy persons the extra step of entering a password can be a un-needed barrier.
 
 If the provided access-token/password was not correct the default password form will be displayed.
 
