@@ -29,8 +29,17 @@ function cmc_afppwbu_redirect() {
 			// Make the token more safe
 			$cmc_access_token = preg_replace( '/[^-a-zA-Z0-9_]/', '', $_GET[ $cmc_password_url_parameter ] );
 
+			// Remove the old access token from the path
+			// This prevents infinity loops, if a wrong password was given by url
+			$cmc_ref = add_query_arg( array( $cmc_password_url_parameter => false ), $_SERVER['REQUEST_URI'] );
+
 			// Prepare the redirect target
-			$cmc_redirect_to_login_location = wp_sanitize_redirect( '/wp-login.php?action=postpass&access_token=' . $cmc_access_token . '&ref=' . $_SERVER['REDIRECT_URL'] );
+			$cmc_redirect_to_login_location_args_array = array(
+				'action' => 'postpass',
+				'access_token' => $cmc_access_token,
+				'ref' => $cmc_ref,
+			);
+			$cmc_redirect_to_login_location = add_query_arg( $cmc_redirect_to_login_location_args_array, '/wp-login.php' );
 
 			// Redirect to login to try to authorise the user by setting a cookie
 			wp_redirect( $cmc_redirect_to_login_location );
