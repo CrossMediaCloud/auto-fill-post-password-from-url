@@ -35,11 +35,11 @@ function cmc_afppwbu_redirect() {
 
 			// Prepare the redirect target
 			$cmc_redirect_to_login_location_args_array = array(
-				'action' => 'postpass',
+				'action'       => 'postpass',
 				'access_token' => $cmc_access_token,
-				'ref' => $cmc_ref,
+				'ref'          => $cmc_ref,
 			);
-			$cmc_redirect_to_login_location = add_query_arg( $cmc_redirect_to_login_location_args_array, '/wp-login.php' );
+			$cmc_redirect_to_login_location            = add_query_arg( $cmc_redirect_to_login_location_args_array, '/wp-login.php' );
 
 			// Redirect to login to try to authorise the user by setting a cookie
 			wp_redirect( $cmc_redirect_to_login_location );
